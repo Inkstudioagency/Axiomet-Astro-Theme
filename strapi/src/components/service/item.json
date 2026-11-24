@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_items",
+  "info": {
+    "displayName": "Item",
+    "icon": "bulletList",
+    "description": "A title and a short description (challenges and areas of expertise)"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

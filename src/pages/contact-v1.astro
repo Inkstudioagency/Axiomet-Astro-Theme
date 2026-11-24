@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroMedia from '@/components/sections/contact-v1/HeroMedia.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/contact-v1/Hero.astro';
+import ContactForm from '@/components/sections/contact-v1/ContactForm.astro';
+import NextSteps from '@/components/sections/contact-v1/NextSteps.astro';
+import Faq from '@/components/sections/contact-v1/Faq.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331df';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Contact V1 - Axiomet"
+  description="The first contact layout in the Axiomet Astro theme, with a project enquiry form, contact details, the steps after you reach out and an FAQ."
+>
+  <div class="hero-area inner-hero">
+    <HeroMedia />
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <ContactForm />
+    <NextSteps />
+    <Faq />
+    <Footer />
+  </div>
+</BaseLayout>

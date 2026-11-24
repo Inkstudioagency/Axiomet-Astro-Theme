@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroVideo from '@/components/sections/home/HeroVideo.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/home/Hero.astro';
+import Approach from '@/components/sections/home/Approach.astro';
+import Services from '@/components/sections/home/Services.astro';
+import Industries from '@/components/sections/home/Industries.astro';
+import Projects from '@/components/sections/home/Projects.astro';
+import Impact from '@/components/sections/home/Impact.astro';
+import Process from '@/components/sections/home/Process.astro';
+import Testimonials from '@/components/sections/home/Testimonials.astro';
+import Blog from '@/components/sections/home/Blog.astro';
+import Faq from '@/components/sections/home/Faq.astro';
+import LogoMarquee from '@/components/sections/home/LogoMarquee.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331ca';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Axiomet - Technology Consulting Astro Theme"
+  description="Axiomet is a dark Astro theme for technology consultancies, with service pages, case studies, a how-we-work slider and an insights blog."
+>
+  <div class="home-hero-area">
+    <HeroVideo />
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <Approach />
+    <Services />
+    <Industries />
+    <Projects />
+    <Impact />
+    <Process />
+    <Testimonials />
+    <Blog />
+    <Faq />
+    <LogoMarquee />
+    <Cta />
+  </div>
+  <Footer />
+</BaseLayout>

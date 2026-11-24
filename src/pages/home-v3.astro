@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/home-v3/Hero.astro';
+import Approach from '@/components/sections/home-v3/Approach.astro';
+import Services from '@/components/sections/home-v3/Services.astro';
+import Industries from '@/components/sections/home-v3/Industries.astro';
+import Projects from '@/components/sections/home-v3/Projects.astro';
+import Impact from '@/components/sections/home-v3/Impact.astro';
+import Process from '@/components/sections/home-v3/Process.astro';
+import Blog from '@/components/sections/home-v3/Blog.astro';
+import Faq from '@/components/sections/home-v3/Faq.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331d6';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Axiomet - Technology Consulting Astro Theme"
+  description="The third homepage layout in the Axiomet Astro theme, built around wide service cards, selected work, impact stats and a process accordion."
+>
+  <div class="hero-area v2">
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <Approach />
+    <Services />
+    <Industries />
+    <Projects />
+    <Impact />
+    <Process />
+    <Blog />
+    <Faq />
+    <Cta />
+  </div>
+  <Footer />
+</BaseLayout>

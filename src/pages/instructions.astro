@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Instructions from '@/components/sections/instructions/Instructions.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331ce';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Instructions - Axiomet"
+  description="Setup instructions for the Axiomet Astro theme, covering CMS collections, style conventions, components and how to swap in your own content."
+>
+  <Header />
+  <div class="main">
+    <Instructions />
+    <Cta />
+  </div>
+  <Footer />
+</BaseLayout>

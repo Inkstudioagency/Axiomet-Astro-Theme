@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/about/Hero.astro';
+import Approach from '@/components/sections/about/Approach.astro';
+import WhoWeAre from '@/components/sections/about/WhoWeAre.astro';
+import Principles from '@/components/sections/about/Principles.astro';
+import Team from '@/components/sections/about/Team.astro';
+import Blog from '@/components/sections/about/Blog.astro';
+import Faq from '@/components/sections/about/Faq.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331de';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="About Us - Axiomet"
+  description="Meet the team behind the Axiomet Astro theme, with the company approach, who we are, core principles, a team slider and answers to common questions."
+>
+  <div class="hero-area inner-hero">
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <Approach />
+    <WhoWeAre />
+    <Principles />
+    <Team />
+    <Blog />
+    <Faq />
+    <Cta />
+    <Footer />
+  </div>
+</BaseLayout>

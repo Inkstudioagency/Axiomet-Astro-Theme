@@ -1,0 +1,19 @@
+{
+  "site": {
+    "title": "Axiomet",
+    "base_url": "https://axiomet-astro-theme.vercel.app",
+    "trailing_slash": false
+  },
+  "metadata": {
+    "meta_title": "Axiomet - Technology Consulting Astro Theme",
+    "meta_description": "Axiomet is a dark Astro theme for technology consultancies, with service pages, case studies, a how-we-work slider and an insights blog.",
+    "meta_image": "/images/og-image.webp",
+    "meta_author": "Ink Studio"
+  },
+  "footer": {
+    "summary": "We help ambitious teams turn complex challenges into clear strategies, intelligent systems, and scalable solutions.",
+    "copyright": "Axiomet",
+    "designer": { "name": "Ink Studio", "link": "https://www.inks.studio/" },
+    "powered_by": { "name": "Astro", "link": "https://astro.build" }
+  }
+}

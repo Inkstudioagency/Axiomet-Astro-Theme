@@ -1,0 +1,189 @@
+---
+import { getBlogs } from '@/lib/content';
+
+const L9 = (await getBlogs('desc')).slice(0, 3);
+const L10 = (await getBlogs('desc')).slice(0, 1);
+const L11 = (await getBlogs('desc')).slice(1, 2);
+const L12 = (await getBlogs('desc')).slice(2, 3);
+---
+
+<section class="section bordered">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="about-row blog">
+              <div class="section-header left">
+                <div class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">INSIGHTS &amp; IDEAS</div>
+                </div>
+                <div class="max-width-32">
+                  <h2 class="section-heading">Planning ahead. Getting smarter every day.</h2>
+                </div>
+              </div>
+              <p to-top-2="" class="paragraph-regular blog-v2">Perspectives on technology, engineering, AI, and the decisions shaping what comes next.</p>
+            </div>
+            <div class="blog-collection-wrap">
+              <div class="w-dyn-list">
+                {L9.length > 0 ? (<div role="list" class="blog-collection-list-v3 w-dyn-items">
+                  {L9.map((item) => (<div role="listitem" class="w-dyn-item">
+                    <div to-top-0="" class="blog-card v3">
+                      <a href={`/blog/${item.slug}`} class="blog-image-link v3 w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="blog-card-image v2" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                      <div class="blog-card-info-wrap v3">
+                        <div class="max-width-22">
+                          <div class="font-medium blog-v2">{item.title}</div>
+                        </div>
+                        <div class="blog-button-wrap v3">
+                          <div class="badge-text insights-v3">{item.category}</div>
+                          <a href={`/blog/${item.slug}`} class="blog-button v2 w-inline-block">
+                            <div class="blog-button-item home-hero v3">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">Read Article</div>
+                                <div class="work-button-text is-two">Read Article</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+            </div>
+            <div data-delay="4000" data-animation="slide" class="slider-main blog w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+              <div class="sldier-mask-mobile w-slider-mask">
+                <div class="slide-mobile w-slide">
+                  <div class="w-dyn-list">
+                    {L10.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L10.map((item) => (<div role="listitem" class="w-dyn-item">
+                        <div class="blog-card v3">
+                          <a href={`/blog/${item.slug}`} class="blog-image-link v3 w-inline-block"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="blog-card-image v2" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                          <div class="blog-card-info-wrap v3">
+                            <div class="max-width-22">
+                              <div class="font-medium blog-v2">{item.title}</div>
+                            </div>
+                            <div class="blog-button-wrap v3">
+                              <div class="badge-text insights-v3">{item.category}</div>
+                              <a to-top-2="" href={`/blog/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">Read Article</div>
+                                    <div class="work-button-text is-two">Read Article</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="slide-mobile w-slide">
+                  <div class="w-dyn-list">
+                    {L11.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L11.map((item) => (<div role="listitem" class="w-dyn-item">
+                        <div class="blog-card v3">
+                          <a href={`/blog/${item.slug}`} class="blog-image-link v3 w-inline-block"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="blog-card-image v2" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                          <div class="blog-card-info-wrap v3">
+                            <div class="max-width-22">
+                              <div class="font-medium blog-v2">{item.title}</div>
+                            </div>
+                            <div class="blog-button-wrap v3">
+                              <div class="badge-text insights-v3">{item.category}</div>
+                              <a to-top-2="" href={`/blog/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">Read Article</div>
+                                    <div class="work-button-text is-two">Read Article</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="slide-mobile w-slide">
+                  <div class="w-dyn-list">
+                    {L12.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L12.map((item) => (<div role="listitem" class="w-dyn-item">
+                        <div class="blog-card v3">
+                          <a href={`/blog/${item.slug}`} class="blog-image-link v3 w-inline-block"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="blog-card-image v2" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                          <div class="blog-card-info-wrap v3">
+                            <div class="max-width-22">
+                              <div class="font-medium blog-v2">{item.title}</div>
+                            </div>
+                            <div class="blog-button-wrap v3">
+                              <div class="badge-text insights-v3">{item.category}</div>
+                              <a to-top-2="" href={`/blog/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">Read Article</div>
+                                    <div class="work-button-text is-two">Read Article</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+              </div>
+              <div class="slider-button left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="slider-button-arrow">
+                  <path d="M3 9L8.6 9L15 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M8 4L3 9L8 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="slider-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="slider-button-arrow">
+                  <path d="M16 10L10.4 10L4 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 15L16 10L11 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="hide w-slider-nav w-round w-num"></div>
+            </div>
+          </div>
+        </div>
+      </section>

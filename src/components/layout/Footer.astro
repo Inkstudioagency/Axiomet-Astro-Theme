@@ -1,0 +1,165 @@
+---
+/**
+ * Site footer. Links come from src/config/menu.json, texts from src/config/config.json.
+ * - "default": the services column lists every service (highest number first), like the template.
+ * - "404": the 404 page's footer, with a "Single Pages" column that links to the newest
+ *   service, case study and article instead.
+ */
+import config from '@/config/config.json';
+import menu from '@/config/menu.json';
+import SocialIcon from '@/components/shared/SocialIcon.astro';
+import { currentLink } from '@/lib/webflow';
+import { getBlogs, getProjects, getServices } from '@/lib/content';
+
+interface Props {
+  variant?: 'default' | '404';
+}
+
+const { variant = 'default' } = Astro.props;
+const { pathname } = Astro.url;
+const services = await getServices('desc');
+const singlePages =
+  variant === '404'
+    ? [
+        { label: 'Service Details', url: `/service/${services[0]?.slug ?? ''}` },
+        { label: 'Case Study Details', url: `/project/${(await getProjects('desc'))[0]?.slug ?? ''}` },
+        { label: 'Blog Details', url: `/blog/${(await getBlogs('desc'))[0]?.slug ?? ''}` },
+      ]
+    : [];
+const { footer } = config;
+const brandSizes = variant === '404' ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px' : '100vw';
+---
+
+<section class="section footer">
+  <div class="section-gap footer">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="footer-grid v2">
+        <div to-top-0="" class="footer-left">
+          <div class="footer-left-top">
+            <a {...currentLink('/', pathname, 'footer-brand-link w-inline-block')}><img loading="lazy" src="/images/Frame-16_2Frame-16.webp" alt="Axiomet logo" class="brand-logo" /></a>
+            <p class="footer-summary">{footer.summary}</p>
+          </div>
+          <div class="footer-left-bottom">
+            <div class="impact-number-wrap">
+              <div class="pill-dot"></div>
+              <div class="footer-menu-text">Quick Contact</div>
+            </div>
+            <div class="footer-social-wrap">
+              {
+                menu.social.map((s) => (
+                  <a aria-label={s.name} href={s.url} target="_blank" class="social-link w-inline-block">
+                    <SocialIcon name={s.name} />
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div to-top-2="" class="footer-menu">
+            <div class="impact-number-wrap">
+              <div class="pill-dot"></div>
+              <div class="footer-menu-text">Explore</div>
+            </div>
+            <div class="footer-link-wrap">
+              {
+                menu.footer.explore.map((link) => (
+                  <a {...currentLink(link.url, pathname, 'footer-link w-inline-block')}>
+                    <div class="footer-text is-one">{link.label}</div>
+                    <div class="footer-text is-two">{link.label}</div>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+          {
+            variant === '404' ? (
+              <div to-top-4="" class="footer-menu">
+                <div class="impact-number-wrap">
+                  <div class="pill-dot" />
+                  <div class="footer-menu-text">Single Pages</div>
+                </div>
+                <div class="footer-link-wrap">
+                  {singlePages.map((link) => (
+                    <a {...currentLink(link.url, pathname, 'footer-link w-inline-block')}>
+                      <div class="footer-text is-one">{link.label}</div>
+                      <div class="footer-text is-two">{link.label}</div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div to-top-4="" class="footer-menu">
+                <div class="impact-number-wrap">
+                  <div class="pill-dot" />
+                  <div class="footer-menu-text">Services</div>
+                </div>
+                <div class="footer-link-wrap">
+                  <div class="w-dyn-list">
+                    {services.length > 0 ? (
+                      <div role="list" class="footer-link-wrap w-dyn-items">
+                        {services.map((service) => (
+                          <div role="listitem" class="w-dyn-item">
+                            <a {...currentLink(`/service/${service.slug}`, pathname, 'footer-link w-inline-block')}>
+                              <div class="footer-text is-one">{service.name}</div>
+                              <div class="footer-text is-two">{service.name}</div>
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )
+          }
+          <div to-top-6="" class="footer-menu">
+            <div class="impact-number-wrap">
+              <div class="pill-dot"></div>
+              <div class="footer-menu-text">Support</div>
+            </div>
+            <div class="footer-link-wrap">
+              {
+                menu.footer.support.map((link) => (
+                  <a {...currentLink(link.url, pathname, 'footer-link w-inline-block')}>
+                    <div class="footer-text is-one">{link.label}</div>
+                    <div class="footer-text is-two">{link.label}</div>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div to-top-4="" class="brand-name-wrap"><img loading="lazy" src="/images/Axiomet_1Axiomet.webp" alt="Axiomet" sizes={brandSizes} srcset="/images/Axiomet_1-p-500.png 500w, /images/Axiomet_1-p-800.png 800w, /images/Axiomet_1-p-1080.png 1080w, /images/Axiomet_1-p-1600.png 1600w, /images/Axiomet_1-p-2000.png 2000w, /images/Axiomet_1-p-2600.webp 2600w, /images/Axiomet_1-p-3200.webp 3200w, /images/Axiomet_1Axiomet.webp 5422w" class="brand-image" /></div>
+      <div to-top-4="" class="footer-bottom v2">
+        {
+          variant === '404' ? (
+            <div class="font-regular secondary">© 2026 {footer.copyright.toUpperCase()}. All rights reserved.</div>
+          ) : (
+            <div class="font-regular secondary">
+              © 2026 {footer.copyright} — Designed by <a href={footer.designer.link} target="_blank" class="footer-bottom-link">{footer.designer.name}</a> - Powered by <a href={footer.powered_by.link} target="_blank" class="footer-bottom-link">{footer.powered_by.name}</a>
+            </div>
+          )
+        }
+        <div class="footer-bottom-right">
+          {
+            menu.footer.bottom.map((link, i) => (
+              <>
+                {i > 0 && <div class="font-regular secondary">|</div>}
+                <a {...currentLink(link.url, pathname, 'footer-link w-inline-block')}>
+                  <div class="footer-text is-one">{link.label}</div>
+                  <div class="footer-text is-two">{link.label}</div>
+                </a>
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

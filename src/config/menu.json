@@ -1,0 +1,65 @@
+{
+  "main": [
+    {
+      "title": "Main pages",
+      "links": [
+        { "label": "Home V1", "url": "/" },
+        { "label": "Home V2", "url": "/home-v2" },
+        { "label": "Home V3", "url": "/home-v3" },
+        { "label": "Case Studies V1", "url": "/case-study-v1" },
+        { "label": "Case Studies V2", "url": "/case-study-v2" },
+        { "label": "Case Studies V3", "url": "/case-study-v3" }
+      ]
+    },
+    {
+      "title": "Single pages",
+      "links": [
+        { "label": "About", "url": "/about-us" },
+        { "label": "Service", "url": "/service" },
+        { "label": "Blog", "url": "/blog" },
+        { "label": "Contact V1", "url": "/contact-v1" },
+        { "label": "Contact V2", "url": "/contact-v2" },
+        { "label": "Contact V3", "url": "/contact-v3" }
+      ]
+    },
+    {
+      "title": "Utility Pages",
+      "links": [
+        { "label": "Style Guide", "url": "/style-guide" },
+        { "label": "License", "url": "/licenses" },
+        { "label": "Change Log", "url": "/changelog" },
+        { "label": "404", "url": "/404" }
+      ]
+    }
+  ],
+  "menu_panel": {
+    "description": "High-Tech Consulting & Engineering",
+    "button": { "label": "Contact Us", "url": "/contact-v1" }
+  },
+  "footer": {
+    "explore": [
+      { "label": "Home", "url": "/" },
+      { "label": "About Us", "url": "/about-us" },
+      { "label": "Services", "url": "/service" },
+      { "label": "Insights", "url": "/blog" },
+      { "label": "Case Studies", "url": "/case-study-v1" },
+      { "label": "Contact", "url": "/contact-v1" }
+    ],
+    "support": [
+      { "label": "Style Guide", "url": "/style-guide" },
+      { "label": "Licenses", "url": "/licenses" },
+      { "label": "Changelog", "url": "/changelog" },
+      { "label": "404", "url": "/404" }
+    ],
+    "bottom": [
+      { "label": "Password Protected", "url": "/401" },
+      { "label": "Instructions", "url": "/instructions" }
+    ]
+  },
+  "social": [
+    { "name": "Instagram", "url": "https://www.instagram.com/" },
+    { "name": "X", "url": "https://x.com/" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/" },
+    { "name": "Facebook", "url": "https://www.facebook.com/" }
+  ]
+}

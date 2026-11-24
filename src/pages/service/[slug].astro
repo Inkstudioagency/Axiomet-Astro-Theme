@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/service-detail/Hero.astro';
+import BiggerPicture from '@/components/sections/service-detail/BiggerPicture.astro';
+import Challenge from '@/components/sections/service-detail/Challenge.astro';
+import Expertise from '@/components/sections/service-detail/Expertise.astro';
+import Process from '@/components/sections/service-detail/Process.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+import config from '@/config/config.json';
+import { getServices } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const entries = await getServices();
+  return entries.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const WF_PAGE = '6b03d34536a37df892a331d3';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title={service.seo.metaTitle ?? `${service.name} - ${config.site.title}`}
+  description={service.seo.metaDescription ?? service.shortDescription}
+  image={service.image.url}
+>
+  <div class="hero-area v2">
+    <Header />
+    <Hero service={service} />
+  </div>
+  <div class="main">
+    <BiggerPicture service={service} />
+    <Challenge service={service} />
+    <Expertise service={service} />
+    <Process />
+    <Cta />
+    <Footer />
+  </div>
+</BaseLayout>

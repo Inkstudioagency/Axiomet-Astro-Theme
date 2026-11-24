@@ -1,0 +1,71 @@
+---
+import RichText from '@/components/RichText.astro';
+import { type Project } from '@/lib/content';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<section class="section black-800">
+        <div class="section-gap blog">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="blog-body-wrap case-detail">
+              <div class="case-detail-grid">
+                <div to-top-0="" class="case-detail-card">
+                  <div class="case-detail-label">
+                    <div class="pill-dot case-detail"></div>
+                    <div class="badge-text case-detail">Client</div>
+                  </div>
+                  <div class="case-detail-value">{project.clientName}</div>
+                </div>
+                <div to-top-2="" class="case-detail-card">
+                  <div class="case-detail-label">
+                    <div class="pill-dot case-detail"></div>
+                    <div class="badge-text case-detail">Industry</div>
+                  </div>
+                  <div class="case-detail-value">{project.industry}</div>
+                </div>
+                <div to-top-4="" class="case-detail-card">
+                  <div class="case-detail-label">
+                    <div class="pill-dot case-detail"></div>
+                    <div class="badge-text case-detail">Location</div>
+                  </div>
+                  <div class="case-detail-value">{project.location}</div>
+                </div>
+                <div to-top-0="" class="case-detail-card">
+                  <div class="case-detail-label">
+                    <div class="pill-dot case-detail"></div>
+                    <div class="badge-text case-detail">Engagement</div>
+                  </div>
+                  <div class="case-detail-value">{project.engagement}</div>
+                </div>
+                <div to-top-2="" class="case-detail-card">
+                  <div class="case-detail-label">
+                    <div class="pill-dot case-detail"></div>
+                    <div class="badge-text case-detail">Timeline</div>
+                  </div>
+                  <div class="case-detail-value">{project.timeline}</div>
+                </div>
+                <div to-top-6="" class="case-detail-card">
+                  <div class="case-detail-label">
+                    <div class="pill-dot case-detail"></div>
+                    <div class="badge-text case-detail">Team</div>
+                  </div>
+                  <div class="case-detail-value">{project.team}</div>
+                </div>
+              </div>
+              <div class="blog-body-intro">
+                <div to-top-0="" class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">THE PROJECT</div>
+                </div>
+                <p to-top-0="" class="font-medium blog-body">{project.overview}</p>
+                <RichText blocks={project.details} class="project-details" to-top-0="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

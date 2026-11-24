@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Licenses from '@/components/sections/licenses/Licenses.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331cc';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Licenses - Axiomet"
+  description="Image, icon and font licensing details for the Axiomet Astro theme, listing each third-party asset used in the demo and where it came from."
+>
+  <Header />
+  <div class="main">
+    <Licenses />
+    <Cta />
+  </div>
+  <Footer />
+</BaseLayout>

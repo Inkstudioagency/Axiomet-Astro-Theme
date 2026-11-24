@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import NotFound from '@/components/sections/not-found/NotFound.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331cf';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="404 - Axiomet"
+  description="This page could not be found. Use the navigation to get back to the Axiomet Astro theme home page, services, case studies or contact details."
+  noindex
+>
+  <Header />
+  <div class="main">
+    <NotFound />
+    <Cta />
+  </div>
+  <Footer variant="404" />
+</BaseLayout>

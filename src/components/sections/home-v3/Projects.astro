@@ -1,0 +1,279 @@
+---
+import { getProjects } from '@/lib/content';
+
+const L3 = (await getProjects('desc')).slice(0, 1);
+const L4 = (await getProjects('desc')).slice(1, 2);
+const L5 = (await getProjects('desc')).slice(2, 3);
+const L6 = (await getProjects('desc')).slice(0, 1);
+const L7 = (await getProjects('desc')).slice(1, 2);
+const L8 = (await getProjects('desc')).slice(2, 3);
+---
+
+<section class="section black-800">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="selected-work-wrap">
+              <div class="section-header impact-v2">
+                <div class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">Selected work</div>
+                </div>
+                <h2 class="section-heading selected-v3">Tackling tough problems with clear, measurable results.</h2>
+                <p class="paragraph-regular selected-v3">A look at how we turn difficult technical problems into practical, scalable solutions.</p>
+              </div>
+              <div to-top-0="" class="project-wrap-block">
+                <div class="project-card active">
+                  <div class="project-collection-wrapper w-dyn-list">
+                    {L3.length > 0 ? (<div role="list" class="project-collection-list w-dyn-items">
+                      {L3.map((item) => (<div role="listitem" class="project-collection-item-v1 w-dyn-item">
+                        <div class="selected-work-card"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                          <div class="project-overlay collapsed"></div>
+                          <div class="selected-work-content">
+                            <div class="selected-work-info">
+                              <div class="section-badge selected-v3">
+                                <div class="pill-dot"></div>
+                                <div class="badge-text">01</div>
+                              </div>
+                              <div class="selected-work-text">
+                                <div class="font-normal work-v2">{item.name}</div>
+                                <div class="project-bottom active">
+                                  <p class="paragraph-regular">{item.summary}</p>
+                                  <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                    <div class="blog-button-item home-hero v3">
+                                      <div class="button-text-pill">
+                                        <div class="work-button-text is-one">View Case Study</div>
+                                        <div class="work-button-text is-two">View Case Study</div>
+                                      </div>
+                                      <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                          <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                          <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg></div>
+                                    </div>
+                                    <div class="button-line"></div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-collection-wrapper w-dyn-list">
+                    {L4.length > 0 ? (<div role="list" class="project-collection-list w-dyn-items">
+                      {L4.map((item) => (<div role="listitem" class="project-collection-item-v1 w-dyn-item">
+                        <div class="selected-work-card"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                          <div class="project-overlay"></div>
+                          <div class="selected-work-content">
+                            <div class="selected-work-info">
+                              <div class="section-badge selected-v3">
+                                <div class="pill-dot"></div>
+                                <div class="badge-text">02</div>
+                              </div>
+                              <div class="selected-work-text">
+                                <div class="font-normal work-v2">{item.name}</div>
+                                <div class="project-bottom">
+                                  <p class="paragraph-regular">{item.summary}</p>
+                                  <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                    <div class="blog-button-item home-hero v3">
+                                      <div class="button-text-pill">
+                                        <div class="work-button-text is-one">View Case Study</div>
+                                        <div class="work-button-text is-two">View Case Study</div>
+                                      </div>
+                                      <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                          <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                          <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg></div>
+                                    </div>
+                                    <div class="button-line"></div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-collection-wrapper w-dyn-list">
+                    {L5.length > 0 ? (<div role="list" class="project-collection-list w-dyn-items">
+                      {L5.map((item) => (<div role="listitem" class="project-collection-item-v1 w-dyn-item">
+                        <div class="selected-work-card"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                          <div class="project-overlay collapsed"></div>
+                          <div class="selected-work-content">
+                            <div class="selected-work-info">
+                              <div class="section-badge selected-v3">
+                                <div class="pill-dot"></div>
+                                <div class="badge-text">03</div>
+                              </div>
+                              <div class="selected-work-text">
+                                <div class="font-normal work-v2">{item.name}</div>
+                                <div class="project-bottom">
+                                  <p class="paragraph-regular">{item.summary}</p>
+                                  <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                    <div class="blog-button-item home-hero v3">
+                                      <div class="button-text-pill">
+                                        <div class="work-button-text is-one">View Case Study</div>
+                                        <div class="work-button-text is-two">View Case Study</div>
+                                      </div>
+                                      <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                          <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                          <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg></div>
+                                    </div>
+                                    <div class="button-line"></div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+              </div>
+              <div data-delay="4000" data-animation="slide" class="slider-main w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+                <div class="sldier-mask-mobile w-slider-mask">
+                  <div class="slide-mobile w-slide">
+                    <div class="project-collection-wrapper w-dyn-list">
+                      {L6.length > 0 ? (<div role="list" class="project-collection-list w-dyn-items">
+                        {L6.map((item) => (<div role="listitem" class="project-collection-item-v1 w-dyn-item">
+                          <div class="selected-work-card"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                            <div class="project-overlay collapsed"></div>
+                            <div class="selected-work-content">
+                              <div class="selected-work-info">
+                                <div class="section-badge selected-v3">
+                                  <div class="pill-dot"></div>
+                                  <div class="badge-text">01</div>
+                                </div>
+                                <div class="selected-work-text">
+                                  <div class="font-normal work-v2">{item.name}</div>
+                                  <div class="project-bottom active">
+                                    <p class="paragraph-regular">{item.summary}</p>
+                                    <a href={`/project/${item.slug}`} class="blog-button w-inline-block">
+                                      <div class="work-button-text">View Case Study</div>
+                                      <div class="work-button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="work-button-arrow">
+                                          <path d="M15.8333 12.4997H9.99992H3.33325L3.33325 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg></div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>))}
+                      </div>
+                      ) : (<div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>)}
+                    </div>
+                  </div>
+                  <div class="slide-mobile w-slide">
+                    <div class="project-collection-wrapper w-dyn-list">
+                      {L7.length > 0 ? (<div role="list" class="project-collection-list w-dyn-items">
+                        {L7.map((item) => (<div role="listitem" class="project-collection-item-v1 w-dyn-item">
+                          <div class="selected-work-card"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                            <div class="project-overlay collapsed"></div>
+                            <div class="selected-work-content">
+                              <div class="selected-work-info">
+                                <div class="section-badge selected-v3">
+                                  <div class="pill-dot"></div>
+                                  <div class="badge-text">01</div>
+                                </div>
+                                <div class="selected-work-text">
+                                  <div class="font-normal work-v2">{item.name}</div>
+                                  <div class="project-bottom active">
+                                    <p class="paragraph-regular">{item.summary}</p>
+                                    <a href={`/project/${item.slug}`} class="work-button w-inline-block">
+                                      <div class="work-button-text">View Case Study</div>
+                                      <div class="work-button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="work-button-arrow">
+                                          <path d="M15.8333 12.4997H9.99992H3.33325L3.33325 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg></div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>))}
+                      </div>
+                      ) : (<div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>)}
+                    </div>
+                  </div>
+                  <div class="slide-mobile w-slide">
+                    <div class="project-collection-wrapper w-dyn-list">
+                      {L8.length > 0 ? (<div role="list" class="project-collection-list w-dyn-items">
+                        {L8.map((item) => (<div role="listitem" class="project-collection-item-v1 w-dyn-item">
+                          <div class="selected-work-card"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                            <div class="project-overlay collapsed"></div>
+                            <div class="selected-work-content">
+                              <div class="selected-work-info">
+                                <div class="section-badge selected-v3">
+                                  <div class="pill-dot"></div>
+                                  <div class="badge-text">01</div>
+                                </div>
+                                <div class="selected-work-text">
+                                  <div class="font-normal work-v2">{item.name}</div>
+                                  <div class="project-bottom active">
+                                    <p class="paragraph-regular">{item.summary}</p>
+                                    <a href={`/project/${item.slug}`} class="work-button w-inline-block">
+                                      <div class="work-button-text">View Case Study</div>
+                                      <div class="work-button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="work-button-arrow">
+                                          <path d="M15.8333 12.4997H9.99992H3.33325L3.33325 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg></div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>))}
+                      </div>
+                      ) : (<div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>)}
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-button left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="slider-button-arrow">
+                    <path d="M3 9L8.6 9L15 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8 4L3 9L8 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="slider-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="slider-button-arrow">
+                    <path d="M16 10L10.4 10L4 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 15L16 10L11 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="hide w-slider-nav w-round w-num"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

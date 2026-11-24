@@ -1,0 +1,66 @@
+---
+import { getProjects } from '@/lib/content';
+
+const L0 = (await getProjects('desc')).slice(0, 100);
+---
+
+<section class="section black-800">
+        <div class="section-gap case-list">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="selected-work-wrap case">
+              <div class="section-header impact-v2">
+                <div class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">Explore our work</div>
+                </div>
+                <div class="max-width-28">
+                  <h2 class="section-heading">Solutions Built Around Real Challenges.</h2>
+                </div>
+              </div>
+              <div id="project" class="w-dyn-list">
+                {L0.length > 0 ? (<div role="list" class="case-card-list w-dyn-items">
+                  {L0.map((item) => (<div role="listitem" class="selected-work-card case w-dyn-item"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                    <div aria-label="" class="project-overlay case"></div>
+                    <div class="case-card-content-wrap">
+                      <div class="case-card-left"><img src={item.clientLogo.url} loading="lazy" alt={item.clientLogo.alt} class="case-logo" srcset={item.clientLogo.srcset ?? undefined} sizes={item.clientLogo.srcset ? '100vw' : undefined}>
+                        <div class="case-card-info">
+                          <div class="case-card-text">
+                            <div class="section-badge">
+                              <div class="pill-dot"></div>
+                              <div class="badge-text">{item.category}</div>
+                            </div>
+                            <h3 class="font-medium blog-v2">{item.name}</h3>
+                          </div>
+                          <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                            <div class="blog-button-item home-hero v3">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">View Case Study</div>
+                                <div class="work-button-text is-two">View Case Study</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="impact-number-wrap case">
+                        <div data-counter="counter" class="impact-stats case">{item.statValue}</div>
+                        <div class="font-small case-stat">{item.statLabel}</div>
+                      </div>
+                    </div>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

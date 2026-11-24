@@ -1,0 +1,177 @@
+---
+import { getServices } from '@/lib/content';
+
+const L0 = (await getServices('asc')).slice(0, 1);
+const L1 = (await getServices('asc')).slice(1, 2);
+const L2 = (await getServices('asc')).slice(2, 3);
+---
+
+<section class="section black-800">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="service-header">
+              <div class="section-badge">
+                <div class="pill-dot"></div>
+                <div class="badge-text">Our core capabilities</div>
+              </div>
+              <div class="service-header-right">
+                <div class="max-width-38">
+                  <h2 class="section-heading">From difficult questions to working solutions.</h2>
+                </div>
+                <div class="max-width-28">
+                  <p class="paragraph-regular">We combine strategic thinking, engineering expertise, and intelligent technology to solve problems that don't have simple answers.</p>
+                </div>
+              </div>
+            </div>
+            <div class="service-wrapper">
+              <div class="service-left-main">
+                <div class="service-left">
+                  <a href="#Strategy" class="service-link w-inline-block">
+                    <div>01. Strategy</div>
+                  </a>
+                  <a href="#Engineering" class="service-link w-inline-block">
+                    <div>02. Engineering</div>
+                  </a>
+                  <a href="#Intelligence" class="service-link w-inline-block">
+                    <div>03. Intelligence</div>
+                  </a>
+                </div>
+              </div>
+              <div class="service-list">
+                <div id="Strategy" class="service-block">
+                  <div class="service-collection-top w-dyn-list">
+                    {L0.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L0.map((item) => (<div role="listitem" class="w-dyn-item">
+                        <div to-top-0="" class="service-card">
+                          <a href={`/service/${item.slug}`} class="service-card-image-wrap w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                          <div class="service-card-info-wrap">
+                            <div class="service-info-top">
+                              <div class="service-number-wrap">
+                                <div class="font-extra-small">01</div>
+                              </div>
+                              <a href={`/service/${item.slug}`} class="service-title-link w-inline-block">
+                                <div class="">{item.name}</div>
+                                <div class="demo">#</div>
+                              </a>
+                              <p class="paragraph-regular">{item.shortDescription}</p>
+                            </div>
+                            <div class="service-info-list">
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[0]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[1]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[2]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[3]?.title}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div id="Engineering" class="service-block">
+                  <div class="w-dyn-list">
+                    {L1.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L1.map((item) => (<div role="listitem" class="w-dyn-item">
+                        <div to-top-0="" class="service-card">
+                          <a href={`/service/${item.slug}`} class="service-card-image-wrap w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                          <div class="service-card-info-wrap">
+                            <div class="service-info-top">
+                              <div class="service-number-wrap">
+                                <div class="font-extra-small">02</div>
+                              </div>
+                              <a href={`/service/${item.slug}`} class="service-title-link w-inline-block">
+                                <div class="">{item.name}</div>
+                                <div class="demo">#</div>
+                              </a>
+                              <p class="paragraph-regular">{item.shortDescription}</p>
+                            </div>
+                            <div class="service-info-list">
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[0]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[1]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[2]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[3]?.title}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div id="Intelligence" class="service-block">
+                  <div class="w-dyn-list">
+                    {L2.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L2.map((item) => (<div role="listitem" class="w-dyn-item">
+                        <div to-top-0="" class="service-card">
+                          <a href={`/service/${item.slug}`} class="service-card-image-wrap w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                          <div class="service-card-info-wrap">
+                            <div class="service-info-top">
+                              <div class="service-number-wrap">
+                                <div class="font-extra-small">03</div>
+                              </div>
+                              <a href={`/service/${item.slug}`} class="service-title-link w-inline-block">
+                                <div class="">{item.name}</div>
+                                <div class="demo">#</div>
+                              </a>
+                              <p class="paragraph-regular">{item.shortDescription}</p>
+                            </div>
+                            <div class="service-info-list">
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[0]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[1]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[2]?.title}</div>
+                              </div>
+                              <div class="service-info-list-item">
+                                <div class="pill-dot"></div>
+                                <div class="service-list-text">{item.expertise[3]?.title}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

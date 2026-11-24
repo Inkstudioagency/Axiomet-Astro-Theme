@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/case-study-v3/Hero.astro';
+import Process from '@/components/sections/case-study-v3/Process.astro';
+import ProjectList from '@/components/sections/case-study-v3/ProjectList.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331dd';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Case Study V3 - Axiomet"
+  description="An accordion case study layout for the Axiomet Astro theme, where each project opens to reveal its image, category and a link to the full story."
+>
+  <div class="hero-area v2">
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <Process />
+    <ProjectList />
+    <Cta />
+    <Footer />
+  </div>
+</BaseLayout>

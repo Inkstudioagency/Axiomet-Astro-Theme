@@ -1,0 +1,212 @@
+---
+import { getProjects } from '@/lib/content';
+
+const L0 = (await getProjects('desc')).slice(0, 1);
+const L1 = (await getProjects('desc')).slice(1, 2);
+const L2 = (await getProjects('desc')).slice(2, 3);
+const L3 = (await getProjects('desc')).slice(3, 4);
+---
+
+<section class="section">
+        <div class="section-gap case-list">
+          <div class="w-layout-blockcontainer container w-container">
+            <div id="project" class="selected-work-wrap case-v3">
+              <div class="section-header _w-w-work v2">
+                <div class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">Explore our work</div>
+                </div>
+                <div class="max-width-28">
+                  <h2 class="section-heading">Solutions Built Around Real Challenges.</h2>
+                </div>
+              </div>
+              <div class="project-card-list-wrap">
+                <div class="project-collection-card active">
+                  <div class="w-dyn-list">
+                    {L0.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L0.map((item) => (<div to-top-0="" role="listitem" class="faq-card case-v3 w-dyn-item">
+                        <div class="faq-left-main case-v3">
+                          <div class="section-badge">
+                            <div class="pill-dot"></div>
+                            <div class="badge-text">{item.category}</div>
+                          </div>
+                        </div>
+                        <div class="faq-right case-v3">
+                          <div class="project-summary-wrap-v3 active">
+                            <a href={`/project/${item.slug}`} class="case-accordion-image w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                              <div class="demo">#</div>
+                            </a>
+                            <div class="case-card-text case-v3">
+                              <div class="font-medium blog-v2">{item.name}</div>
+                              <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">View Case Study</div>
+                                    <div class="work-button-text is-two">View Case Study</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                                <div class="button-line"></div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="faq-icon-wrap v3"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="project-icon active">
+                            <path d="M11.9922 4V20M19.9922 12H3.99219" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="project-collection-card">
+                  <div class="w-dyn-list">
+                    {L1.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L1.map((item) => (<div to-top-0="" role="listitem" class="faq-card case-v3 w-dyn-item">
+                        <div class="faq-left-main case-v3">
+                          <div class="section-badge">
+                            <div class="pill-dot"></div>
+                            <div class="badge-text">{item.category}</div>
+                          </div>
+                        </div>
+                        <div class="faq-right case-v3">
+                          <div class="project-summary-wrap-v3">
+                            <a href={`/project/${item.slug}`} class="case-accordion-image w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                              <div class="demo">#</div>
+                            </a>
+                            <div class="case-card-text case-v3">
+                              <div class="font-medium blog-v2">{item.name}</div>
+                              <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">View Case Study</div>
+                                    <div class="work-button-text is-two">View Case Study</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                                <div class="button-line"></div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="faq-icon-wrap v3"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="project-icon">
+                            <path d="M11.9922 4V20M19.9922 12H3.99219" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="project-collection-card">
+                  <div class="w-dyn-list">
+                    {L2.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L2.map((item) => (<div to-top-0="" role="listitem" class="faq-card case-v3 w-dyn-item">
+                        <div class="faq-left-main case-v3">
+                          <div class="section-badge">
+                            <div class="pill-dot"></div>
+                            <div class="badge-text">{item.category}</div>
+                          </div>
+                        </div>
+                        <div class="faq-right case-v3">
+                          <div class="project-summary-wrap-v3">
+                            <a href={`/project/${item.slug}`} class="case-accordion-image w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                              <div class="demo">#</div>
+                            </a>
+                            <div class="case-card-text case-v3">
+                              <div class="font-medium blog-v2">{item.name}</div>
+                              <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">View Case Study</div>
+                                    <div class="work-button-text is-two">View Case Study</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                                <div class="button-line"></div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="faq-icon-wrap v3"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="project-icon">
+                            <path d="M11.9922 4V20M19.9922 12H3.99219" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+                <div class="project-collection-card">
+                  <div class="w-dyn-list">
+                    {L3.length > 0 ? (<div role="list" class="w-dyn-items">
+                      {L3.map((item) => (<div to-top-0="" role="listitem" class="faq-card case-v3 last w-dyn-item">
+                        <div class="faq-left-main case-v3">
+                          <div class="section-badge">
+                            <div class="pill-dot"></div>
+                            <div class="badge-text">{item.category}</div>
+                          </div>
+                        </div>
+                        <div class="faq-right case-v3">
+                          <div class="project-summary-wrap-v3">
+                            <a href={`/project/${item.slug}`} class="case-accordion-image w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                              <div class="demo">#</div>
+                            </a>
+                            <div class="case-card-text case-v3">
+                              <div class="font-medium blog-v2">{item.name}</div>
+                              <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                                <div class="blog-button-item home-hero v3">
+                                  <div class="button-text-pill">
+                                    <div class="work-button-text is-one">View Case Study</div>
+                                    <div class="work-button-text is-two">View Case Study</div>
+                                  </div>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                      <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                                <div class="button-line"></div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="faq-icon-wrap v3"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="project-icon">
+                            <path d="M11.9922 4V20M19.9922 12H3.99219" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                      </div>))}
+                    </div>
+                    ) : (<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

@@ -1,0 +1,54 @@
+---
+/**
+ * Instructions page: how the theme's animations work in Astro.
+ * Same layout and classes as the template's Instructions page.
+ */
+const counterExample = `<!-- Any text element whose first text is a number counts up from 0
+     when it scrolls into view (e.g. 120+, 98%, 3.5x, 1,200) -->
+<div data-counter="" class="impact-stats">41<span>%</span></div>`;
+
+const scrollExample = `// src/scripts/animations.ts — smooth scrolling (Lenis)
+const lenis = new Lenis({
+  smoothWheel: true,     // smooth mouse-wheel scrolling
+  lerp: 0.1,             // smoothness (lower = smoother)
+  wheelMultiplier: 1,    // scroll speed
+  infinite: false,
+});`;
+
+const revealExample = `<!-- Scroll reveal: add one of these attributes to any element -->
+<div to-top-0="">Fades up when it scrolls into view</div>
+<div to-top-2="">…with a short delay</div>
+<div to-top-4="">…with a longer delay</div>
+<img parallax="" src="/images/example.webp" alt="" />`;
+
+const codeStyle = 'display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em';
+---
+
+<section class="section">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="instruction-wrapper">
+        <div class="instruction-header">
+          <h1 class="hero-heading">Instruction</h1>
+          <div class="instruction-p-wrap">
+            <p class="instruction-paragraph">Animation Setup &amp; Usage Guide for the Axiomet Astro theme — how the page animations, smooth scrolling and counters work</p>
+          </div>
+        </div>
+        <div class="instruction-main">
+          <p class="instruction-p">1. Page-load and scroll animations are played by the interaction runtime in <code>public/js/webflow.js</code> with GSAP, ScrollTrigger and SplitText (installed from npm and loaded in <code>src/scripts/animations.ts</code>). Elements opt in with an attribute. Every page passes its <code>wfPage</code> id to <code>BaseLayout</code>; keep it when you edit a page, because the runtime uses it to find that page's animations.</p>
+          <div to-top-6s="" class="instruction-content-block">
+            <pre class="instruction-code-block w-code-block" style={codeStyle}><code class="language-html" style="white-space:pre-wrap">{revealExample}</code></pre>
+          </div>
+          <p class="instruction-p">2. Smooth scrolling uses Lenis with the same settings as the original template. Change or remove it in <code>src/scripts/animations.ts</code>.</p>
+          <div to-top-6s="" class="instruction-content-block">
+            <pre class="instruction-code-block w-code-block" style={codeStyle}><code class="language-javascript" style="white-space:pre-wrap">{scrollExample}</code></pre>
+          </div>
+          <p class="instruction-p">3. Numbers count up when they scroll into view: add the <code>data-counter</code> attribute to the element. A trailing <code>&lt;span&gt;</code> (such as <code>+</code> or <code>%</code>) is left as it is.</p>
+          <div to-top-6s="" class="instruction-content-block">
+            <pre class="instruction-code-block w-code-block" style={codeStyle}><code class="language-html" style="white-space:pre-wrap">{counterExample}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

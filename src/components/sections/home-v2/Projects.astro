@@ -1,0 +1,127 @@
+---
+import { getProjects } from '@/lib/content';
+
+const L3 = (await getProjects('desc')).slice(0, 1);
+const L4 = (await getProjects('desc')).slice(1, 2);
+const L5 = (await getProjects('desc')).slice(2, 3);
+const L6 = (await getProjects('desc')).slice(0, 3);
+---
+
+<section class="section work">
+        <div class="section-gap work-v2">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="work-row">
+              <div to-top-0="" class="section-badge">
+                <div class="pill-dot"></div>
+                <div class="badge-text">Selected work</div>
+              </div>
+              <div class="work-info-wrap v2">
+                <h2 class="section-heading work-v2">Tackling tough problems with clear, measurable results.</h2>
+                <p class="paragraph-regular work-v2">A look at how we turn difficult technical problems into practical, scalable solutions.</p>
+              </div>
+            </div>
+            <div class="work-row bottom">
+              <div data-delay="4000" data-animation="slide" class="slider-main w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+                <div class="sldier-mask-mobile w-slider-mask">
+                  <div class="slide-mobile w-slide">
+                    <div class="w-dyn-list">
+                      {L3.length > 0 ? (<div role="list" class="w-dyn-items">
+                        {L3.map((item) => (<div role="listitem" class="w-dyn-item">
+                          <a href={`/project/${item.slug}`} class="work-case-card w-inline-block">
+                            <div class="project-card-image-wrap"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="work-case-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></div>
+                            <div class="work-card-info v2">
+                              <div class="font-normal work-v2">{item.name}</div>
+                              <p class="paragraph-regular">{item.summary}</p>
+                            </div>
+                          </a>
+                        </div>))}
+                      </div>
+                      ) : (<div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>)}
+                    </div>
+                  </div>
+                  <div class="slide-mobile w-slide">
+                    <div class="w-dyn-list">
+                      {L4.length > 0 ? (<div role="list" class="w-dyn-items">
+                        {L4.map((item) => (<div role="listitem" class="w-dyn-item">
+                          <a href={`/project/${item.slug}`} class="work-case-card w-inline-block">
+                            <div class="project-card-image-wrap"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="work-case-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></div>
+                            <div class="work-card-info v2">
+                              <div class="font-normal work-v2">{item.name}</div>
+                              <p class="paragraph-regular">{item.summary}</p>
+                            </div>
+                          </a>
+                        </div>))}
+                      </div>
+                      ) : (<div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>)}
+                    </div>
+                  </div>
+                  <div class="slide-mobile w-slide">
+                    <div class="w-dyn-list">
+                      {L5.length > 0 ? (<div role="list" class="w-dyn-items">
+                        {L5.map((item) => (<div role="listitem" class="w-dyn-item">
+                          <a href={`/project/${item.slug}`} class="work-case-card w-inline-block">
+                            <div class="project-card-image-wrap"><img src={item.image.url} loading="lazy" alt={item.image.alt} class="work-case-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></div>
+                            <div class="work-card-info v2">
+                              <div class="font-normal work-v2">{item.name}</div>
+                              <p class="paragraph-regular">{item.summary}</p>
+                            </div>
+                          </a>
+                        </div>))}
+                      </div>
+                      ) : (<div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>)}
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-button left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="slider-button-arrow">
+                    <path d="M3 9L8.6 9L15 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8 4L3 9L8 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="slider-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="slider-button-arrow">
+                    <path d="M16 10L10.4 10L4 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 15L16 10L11 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="hide w-slider-nav w-round w-num"></div>
+              </div>
+              <div to-top-0="">
+                <a data-wf--primary-button--variant="bg-white" data-wf-component-id="4c762986-7cae-1c12-bec9-1ecbb760ee61" data-wf-variant-state="21f200ea-2927-6f93-7fe0-867acd69adf4" href="/case-study-v1" class="primary-button w-variant-21f200ea-2927-6f93-7fe0-867acd69adf4 w-inline-block">
+                  <div class="button-text-pill">
+                    <div class="button-text is-one">View All Case Study</div>
+                    <div class="button-text is-two">View All Case Study</div>
+                  </div>
+                  <div class="button-arrow-pill"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                      <path d="M15.8333 12.5002H9.99992H3.33325L3.33325 5.8335V5.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 16.6668L16.6667 12.5002L12.5 8.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                      <path d="M15.8333 12.5002H9.99992H3.33325L3.33325 5.8335V5.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 16.6668L16.6667 12.5002L12.5 8.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></div>
+                </a>
+              </div>
+              <div class="project-wrap">
+                <div class="w-dyn-list">
+                  {L6.length > 0 ? (<div role="list" class="work-case-grid w-dyn-items">
+                    {L6.map((item) => (<div role="listitem" class="w-dyn-item">
+                      <a to-top-0="" href={`/project/${item.slug}`} class="work-case-card w-inline-block">
+                        <div class="project-card-image-wrap"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="work-case-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></div>
+                        <div class="work-card-info v2">
+                          <div class="font-normal work-v2">{item.name}</div>
+                          <p class="paragraph-regular">{item.summary}</p>
+                        </div>
+                      </a>
+                    </div>))}
+                  </div>
+                  ) : (<div class="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

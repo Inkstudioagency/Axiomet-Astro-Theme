@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/home-v2/Hero.astro';
+import LogoMarquee from '@/components/sections/home-v2/LogoMarquee.astro';
+import Approach from '@/components/sections/home-v2/Approach.astro';
+import Services from '@/components/sections/home-v2/Services.astro';
+import Industries from '@/components/sections/home-v2/Industries.astro';
+import Projects from '@/components/sections/home-v2/Projects.astro';
+import Impact from '@/components/sections/home-v2/Impact.astro';
+import Process from '@/components/sections/home-v2/Process.astro';
+import Testimonials from '@/components/sections/home-v2/Testimonials.astro';
+import Blog from '@/components/sections/home-v2/Blog.astro';
+import Faq from '@/components/sections/home-v2/Faq.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331d1';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Axiomet - Technology Consulting Astro Theme"
+  description="The second homepage layout in the Axiomet Astro theme, leading with the approach, a services slider, client logos and a full set of reviews."
+>
+  <div class="hero-area v2">
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <LogoMarquee />
+    <Approach />
+    <Services />
+    <Industries />
+    <Projects />
+    <Impact />
+    <Process />
+    <Testimonials />
+    <Blog />
+    <Faq />
+    <Cta />
+    <Footer />
+  </div>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/case-study-v2/Hero.astro';
+import Process from '@/components/sections/case-study-v2/Process.astro';
+import ProjectList from '@/components/sections/case-study-v2/ProjectList.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const WF_PAGE = '6b03d34536a37df892a331dc';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title="Case Study V2 - Axiomet"
+  description="A two-column case study grid for the Axiomet Astro theme, pairing project images and categories with a short look at how every engagement runs."
+>
+  <div class="hero-area v2">
+    <Header />
+    <Hero />
+  </div>
+  <div class="main">
+    <Process />
+    <ProjectList />
+    <Cta />
+    <Footer />
+  </div>
+</BaseLayout>

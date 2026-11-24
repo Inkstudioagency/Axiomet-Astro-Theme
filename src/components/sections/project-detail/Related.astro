@@ -1,0 +1,73 @@
+---
+import { getProjects, type Project } from '@/lib/content';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const L0 = (await getProjects('desc')).filter((p) => p.slug !== project.slug).slice(0, 2);
+---
+
+<section class="section">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="selected-work-wrap case-detail">
+              <div to-top-0="" class="review-header case-detail">
+                <h2 class="section-heading">Related Case Studies</h2>
+                <a data-wf--primary-button--variant="bg-white" data-wf-component-id="4c762986-7cae-1c12-bec9-1ecbb760ee61" data-wf-variant-state="21f200ea-2927-6f93-7fe0-867acd69adf4" href="/case-study-v1" class="primary-button w-variant-21f200ea-2927-6f93-7fe0-867acd69adf4 w-inline-block">
+                  <div class="button-text-pill">
+                    <div class="button-text is-one">All Case Studies</div>
+                    <div class="button-text is-two">All Case Studies</div>
+                  </div>
+                  <div class="button-arrow-pill"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                      <path d="M15.8333 12.5002H9.99992H3.33325L3.33325 5.8335V5.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 16.6668L16.6667 12.5002L12.5 8.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                      <path d="M15.8333 12.5002H9.99992H3.33325L3.33325 5.8335V5.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 16.6668L16.6667 12.5002L12.5 8.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></div>
+                </a>
+              </div>
+              <div class="w-dyn-list">
+                {L0.length > 0 ? (<div role="list" class="case-card-list case-detail w-dyn-items">
+                  {L0.map((item) => (<div to-top-0="" role="listitem" class="selected-work-card case-detail w-dyn-item"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="selected-work-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                    <div class="project-overlay case"></div>
+                    <div class="case-card-content-wrap">
+                      <div class="case-card-left releted"><img src={item.clientLogo.url} loading="lazy" alt={item.clientLogo.alt} class="case-logo case-detail" srcset={item.clientLogo.srcset ?? undefined} sizes={item.clientLogo.srcset ? '100vw' : undefined}>
+                        <div class="case-card-text">
+                          <div class="section-badge">
+                            <div class="pill-dot"></div>
+                            <div class="badge-text">{item.category}</div>
+                          </div>
+                          <h3 class="font-medium blog-v2">{item.name}</h3>
+                        </div>
+                      </div>
+                      <a href={`/project/${item.slug}`} class="blog-button v2 w-inline-block">
+                        <div class="blog-button-item home-hero">
+                          <div class="button-text-pill">
+                            <div class="work-button-text is-one">View Case Study</div>
+                            <div class="work-button-text is-two">View Case Study</div>
+                          </div>
+                          <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                              <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                              <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                        </div>
+                        <div class="button-line"></div>
+                      </a>
+                    </div>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

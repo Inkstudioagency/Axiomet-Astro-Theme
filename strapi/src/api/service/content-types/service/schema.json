@@ -1,0 +1,104 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": "Services: /service/[slug], /service, the home page service sections and the footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "name"
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "shortName": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "longSummary": {
+      "type": "text",
+      "required": true
+    },
+    "biggerPicture": {
+      "type": "text",
+      "required": true
+    },
+    "challengeTitle": {
+      "type": "string",
+      "required": true
+    },
+    "challengeDescription": {
+      "type": "text",
+      "required": true
+    },
+    "challenges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.item",
+      "max": 4
+    },
+    "challengeImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "expertiseTitle": {
+      "type": "string",
+      "required": true
+    },
+    "expertiseDescription": {
+      "type": "text",
+      "required": true
+    },
+    "expertise": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.item",
+      "max": 4
+    },
+    "expertiseImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+---
+import { getBlogs } from '@/lib/content';
+
+const L0 = (await getBlogs('asc')).slice(0, 3);
+---
+
+<section class="section">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="about-row blog-detail">
+              <div class="max-width-22">
+                <h2 class="section-heading">More Ideas Worth Exploring</h2>
+              </div>
+              <div class="blog-button-block">
+                <a data-wf--primary-button--variant="bg-white" data-wf-component-id="4c762986-7cae-1c12-bec9-1ecbb760ee61" data-wf-variant-state="21f200ea-2927-6f93-7fe0-867acd69adf4" href="/blog" class="primary-button w-variant-21f200ea-2927-6f93-7fe0-867acd69adf4 w-inline-block">
+                  <div class="button-text-pill">
+                    <div class="button-text is-one">All Article</div>
+                    <div class="button-text is-two">All Article</div>
+                  </div>
+                  <div class="button-arrow-pill"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                      <path d="M15.8333 12.5002H9.99992H3.33325L3.33325 5.8335V5.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 16.6668L16.6667 12.5002L12.5 8.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                      <path d="M15.8333 12.5002H9.99992H3.33325L3.33325 5.8335V5.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 16.6668L16.6667 12.5002L12.5 8.3335" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></div>
+                </a>
+              </div>
+            </div>
+            <div class="blog-collection-wrap blog-detail w-dyn-list">
+              {L0.length > 0 ? (<div role="list" class="blog-collection-list blog-detail w-dyn-items">
+                {L0.map((item) => (<div to-top-0="" role="listitem" class="blog-card blog-page w-dyn-item">
+                  <a href={`/blog/${item.slug}`} class="blog-image-link blog-detail w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="blog-card-image v2" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}>
+                    <div class="demo">#</div>
+                  </a>
+                  <div class="blog-card-info-wrap">
+                    <div class="badge-text">{item.category}</div>
+                    <div class="max-width-28">
+                      <div class="font-medium blog-v2">{item.title}</div>
+                    </div>
+                    <div class="blog-button-wrap v2">
+                      <a href={`/blog/${item.slug}`} class="blog-button w-inline-block">
+                        <div class="blog-button-item home-hero">
+                          <div class="button-text-pill">
+                            <div class="work-button-text is-one">Read Article</div>
+                            <div class="work-button-text is-two">Read Article</div>
+                          </div>
+                          <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                              <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                              <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                        </div>
+                        <div class="button-line"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>))}
+              </div>
+              ) : (<div class="w-dyn-empty">
+                <div>No items found.</div>
+              </div>)}
+            </div>
+          </div>
+        </div>
+      </section>

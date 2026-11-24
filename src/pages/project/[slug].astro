@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Hero from '@/components/sections/project-detail/Hero.astro';
+import Body from '@/components/sections/project-detail/Body.astro';
+import Related from '@/components/sections/project-detail/Related.astro';
+import Faq from '@/components/sections/project-detail/Faq.astro';
+import Cta from '@/components/shared/Cta.astro';
+import Footer from '@/components/layout/Footer.astro';
+import config from '@/config/config.json';
+import { getProjects } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const entries = await getProjects();
+  return entries.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const WF_PAGE = '6b03d34536a37df892a331d4';
+---
+
+<BaseLayout
+  wfPage={WF_PAGE}
+  title={project.seo.metaTitle ?? `${project.name} - ${config.site.title}`}
+  description={project.seo.metaDescription ?? project.shortDescription}
+  image={project.image.url}
+>
+  <div class="hero-area black-800">
+    <Header />
+    <Hero project={project} />
+  </div>
+  <div class="main">
+    <Body project={project} />
+    <Related project={project} />
+    <Faq />
+    <Cta />
+    <Footer />
+  </div>
+</BaseLayout>

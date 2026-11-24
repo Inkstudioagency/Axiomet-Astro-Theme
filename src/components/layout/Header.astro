@@ -1,0 +1,70 @@
+---
+/**
+ * Site navigation (Webflow navbar component, full-screen menu panel).
+ * Links come from src/config/menu.json; the link to the current page gets `w--current`.
+ */
+import menu from '@/config/menu.json';
+import { currentLink } from '@/lib/webflow';
+
+const { pathname } = Astro.url;
+const logoAlt =
+  "Axiomet company logo with stylized letter A composed of two slanted trapezoids, one white and one grey, next to the word 'Axiomet' in white text on a black background.";
+---
+
+<div data-animation="default" class="navber w-nav" data-easing2="ease" data-wf-component-id="75dced0e-d1a9-c3f4-8589-4c9547f67d38" data-easing="ease" data-wf-variant-state="base" data-collapse="all" role="banner" data-duration="600">
+  <div class="container w-container">
+    <div class="nav-item-wrap">
+      <a {...currentLink('/', pathname, 'w-nav-brand')}><img loading="lazy" src="/images/Frame-16_2Frame-16.webp" alt={logoAlt} class="brand-logo" /></a>
+      <nav role="navigation" class="nav-menu w-nav-menu">
+        <div class="nav-menu-panel">
+          <div class="navigation-var-main">
+            <div class="nav-menu-left">
+              <div class="nav-menu-wrapper">
+                {
+                  menu.main.map((group) => (
+                    <div class="nav-menu-group">
+                      <div class="menu-text">{group.title}</div>
+                      <div class="nav-menu-main">
+                        {group.links.map((link) => (
+                          <a {...currentLink(link.url, pathname, 'nav-link')}>{link.label}</a>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+              <div class="dropdown-menu-line"></div>
+              <div class="nav-left-bottom"></div>
+            </div>
+            <div class="nav-menu-right">
+              <div class="dropdown-right-top">
+                <a {...currentLink('/', pathname, 'dropdown-brand-link w-inline-block')}><img src="/images/Frame-16_2Frame-16.webp" loading="lazy" alt={logoAlt} class="menu-brand-logo" /></a>
+                <div class="menu-description">{menu.menu_panel.description}</div>
+                <a {...currentLink(menu.menu_panel.button.url, pathname, 'btn right w-inline-block')}>
+                  <div>{menu.menu_panel.button.label}</div>
+                </a>
+              </div><img src="/images/Home-1.webp" loading="lazy" sizes="100vw" srcset="/images/Home-1-p-500.webp 500w, /images/Home-1-p-800.webp 800w, /images/Home-1.webp 855w" alt="Two men in business attire looking at a laptop screen together in a modern office with large windows." class="menu-right-image" />
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-right">
+        <div class="menu-button w-nav-button">
+          <div class="div-block">
+            <div class="menu-dots">
+              <div class="menu-dot"></div>
+              <div class="menu-dot"></div>
+              <div class="menu-dot"></div>
+              <div class="menu-dot"></div>
+            </div>
+            <div class="menu-text-wrap">
+              <div class="nav-menu-text">Menu</div>
+              <div class="menu-minus"></div>
+            </div>
+          </div>
+          <div class="menu-blur"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

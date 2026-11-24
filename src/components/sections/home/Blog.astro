@@ -1,0 +1,62 @@
+---
+import { getBlogs } from '@/lib/content';
+
+const L6 = (await getBlogs('desc')).slice(0, 2);
+---
+
+<section class="section">
+        <div class="section-gap blog">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="section-header">
+              <div class="section-badge">
+                <div class="pill-dot"></div>
+                <div class="badge-text">INSIGHTS &amp; IDEAS</div>
+              </div>
+              <div class="max-width-32">
+                <h2 class="section-heading center">Planning ahead. Getting smarter every day.</h2>
+              </div>
+              <div class="h-w-work-summry-wrap">
+                <p class="paragraph-regular center">Perspectives on technology, engineering, AI, and the decisions shaping what comes next.</p>
+              </div>
+            </div>
+            <div class="blog-collection-wrap-v1">
+              <div class="w-dyn-list">
+                {L6.length > 0 ? (<div role="list" class="blog-collection-list w-dyn-items">
+                  {L6.map((item) => (<div role="listitem" class="w-dyn-item">
+                    <div to-top-0="" class="blog-card">
+                      <a href={`/blog/${item.slug}`} class="blog-image-link w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="blog-card-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939px' : undefined}></a>
+                      <div class="blog-card-info-wrap">
+                        <div class="badge-text">{item.category}</div>
+                        <div class="max-width-22">
+                          <div class="font-medium">{item.title}</div>
+                        </div>
+                        <div class="blog-button-wrapper">
+                          <a href={`/blog/${item.slug}`} class="blog-button w-inline-block">
+                            <div class="blog-button-item home-hero">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">All Articles</div>
+                                <div class="work-button-text is-two">All Articles</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

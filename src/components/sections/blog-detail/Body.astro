@@ -1,0 +1,51 @@
+---
+import RichText from '@/components/RichText.astro';
+import { type Blog } from '@/lib/content';
+
+interface Props {
+  blog: Blog;
+}
+
+const { blog } = Astro.props;
+---
+
+<section class="section black-800">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="blog-body-wrap">
+              <div to-top-0="" class="blog-body-intro">
+                <div to-top-0="" class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">Introduction</div>
+                </div>
+                <p to-top-0="" class="font-medium blog-body">{blog.summary}</p>
+              </div>
+              <div class="blog-body-content">
+                <RichText blocks={blog.content} class="blog-rich-text" to-top-0="" />
+                <div to-top-0="" class="blog-quote">
+                  <p class="font-normal blog-body">{blog.quote}</p>
+                  <div class="badge-text">— AXIOMET</div>
+                </div>
+                <RichText blocks={blog.contentAfterQuote} class="blog-rich-text" to-top-0="" />
+                <div to-top-0="" class="blog-author-bar">
+                  <div class="blog-author-info">
+                    <div class="font-normal blog-body">AXIOMET Research</div>
+                    <div class="font-regular blog-body">Technology, Engineering &amp; Intelligence</div>
+                  </div>
+                  <div class="blog-share">
+                    <div class="font-regular medium">Share:</div>
+                    <div class="blog-share-links">
+                      <a aria-label="Share on X" href="https://x.com/" target="_blank" class="blog-share-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" width="100%" class="blog-share-icon">
+                          <path d="M2 14L7.03227 8.96773M8.96773 7.03227L14 14H10.6667L7.03227 8.96773L2 2H5.33333L8.96773 7.03227ZM14 2L8.96773 7.03227" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
+                      <a aria-label="Share on Facebook" href="https://www.facebook.com/" target="_blank" class="blog-share-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" width="100%" class="blog-share-icon">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M4.12089 6.88903C3.46905 6.88903 3.33301 7.01696 3.33301 7.62976V8.7409C3.33301 9.35376 3.46905 9.48163 4.12089 9.48163H5.69664V13.9261C5.69664 14.5389 5.83268 14.6668 6.48452 14.6668H8.06028C8.71214 14.6668 8.84814 14.5389 8.84814 13.9261V9.48163H10.6175C11.1119 9.48163 11.2393 9.3913 11.3751 8.94443L11.7127 7.8333C11.9453 7.06776 11.802 6.88903 10.9551 6.88903H8.84814V5.0372C8.84814 4.6281 9.20088 4.29646 9.63601 4.29646H11.8785C12.5303 4.29646 12.6663 4.16856 12.6663 3.55572V2.07424C12.6663 1.4614 12.5303 1.3335 11.8785 1.3335H9.63601C7.46034 1.3335 5.69664 2.9917 5.69664 5.0372V6.88903H4.12089Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+                        </svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

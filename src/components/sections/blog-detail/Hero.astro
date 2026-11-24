@@ -1,0 +1,36 @@
+---
+import { formatDate, type Blog } from '@/lib/content';
+
+interface Props {
+  blog: Blog;
+}
+
+const { blog } = Astro.props;
+---
+
+<section class="section">
+        <div class="section-gap case-v2">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="home-hero-content-wrap contact-v3">
+              <div class="inner-hero-left blog-detail">
+                <div class="blog-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">{blog.category}</div>
+                </div>
+                <div class="hero-heading-wrap blog-detail">
+                  <h1 data-wf-target="[[[&quot;6b03d34536a37df892a331d5&quot;,&quot;67c2868b-3e15-56ee-154b-8ee362e508cb&quot;],[]]]" class="">{blog.title}</h1>
+                  <p class="paragraph-regular contact-v2 blog-detail">{blog.shortDescription}</p>
+                </div>
+              </div>
+              <div class="inner-hero-right blog-detail">
+                <div class="blog-meta-group">
+                  <div class="badge-text">{blog.readTime}</div>
+                  <div class="badge-text">,</div>
+                </div>
+                <div class="badge-text">{formatDate(blog.date)}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-wrap blog-detail"><img src={blog.image.url} loading="lazy" parallax="" alt={blog.image.alt} class="home-hero-image case-v2" srcset={blog.image.srcset ?? undefined} sizes={blog.image.srcset ? '100vw' : undefined}></div>
+      </section>

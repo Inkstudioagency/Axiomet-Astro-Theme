@@ -1,0 +1,57 @@
+---
+import { type Service } from '@/lib/content';
+
+interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+---
+
+<section class="section black-800">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="about-row svc-detail">
+              <div to-top-0="" class="section-header _w-w-work v2">
+                <div class="section-badge">
+                  <div class="pill-dot"></div>
+                  <div class="badge-text">THE BIGGER PICTURE</div>
+                </div>
+                <h2 class="about-rebuild-text svc-detail">{service.biggerPicture}</h2>
+              </div>
+              <div class="about-stats-grid svc-detail">
+                <div to-top-0="" class="about-stats-card about-principle svc-detail">
+                  <div class="how-we-work-number">
+                    <div class="pill-dot"></div>
+                    <div class="badge-text">01.</div>
+                  </div>
+                  <div class="about-card-info-wrap help">
+                    <h3 class="font-extra-normal help">Strategy</h3>
+                    <p class="font-small help">Know what matters.</p>
+                  </div>
+                </div>
+                <div to-top-2="" class="about-stats-card about-principle svc-detail">
+                  <div class="how-we-work-number">
+                    <div class="pill-dot"></div>
+                    <div class="badge-text">02.</div>
+                  </div>
+                  <div class="about-card-info-wrap help">
+                    <h3 class="font-extra-normal help">Technology</h3>
+                    <p class="font-small help">Know what's possible.</p>
+                  </div>
+                </div>
+                <div to-top-4="" class="about-stats-card about-principle svc-detail">
+                  <div class="how-we-work-number">
+                    <div class="pill-dot"></div>
+                    <div class="badge-text">03.</div>
+                  </div>
+                  <div class="about-card-info-wrap help">
+                    <h3 class="font-extra-normal help">Execution</h3>
+                    <p class="font-small help">Know what comes next.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

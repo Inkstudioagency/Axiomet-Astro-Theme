@@ -1,0 +1,259 @@
+---
+import { getServices, pad } from '@/lib/content';
+
+const L0 = (await getServices('asc')).slice(0, 1);
+const L1 = (await getServices('asc')).slice(1, 2);
+const L2 = (await getServices('asc')).slice(2, 3);
+const L3 = (await getServices('asc')).slice(3, 4);
+---
+
+<section class="section black-800">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="section-header _w-w-work v2">
+              <div class="section-badge">
+                <div class="pill-dot"></div>
+                <div class="badge-text">What we do</div>
+              </div>
+              <div class="about-row blog service">
+                <div class="max-width-38">
+                  <h2 class="section-heading">From difficult questions to working solutions.</h2>
+                </div>
+                <div class="max-width-18">
+                  <p class="paragraph-regular">We combine strategic thinking, engineering expertise, and intelligent technology to solve problems that don't have simple answers.</p>
+                </div>
+              </div>
+            </div>
+            <div class="service-list-wrap">
+              <div class="service-c-list-wrap w-dyn-list">
+                {L0.length > 0 ? (<div role="list" class="service-list service-main w-dyn-items">
+                  {L0.map((item) => (<div role="listitem" class="service-card w-dyn-item">
+                    <a href={`/service/${item.slug}`} class="service-card-image-wrap v3 service w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '100vw' : undefined}>
+                      <div class="demo">#</div>
+                    </a>
+                    <div class="service-card-info-wrap v3 service">
+                      <div class="service-info-top service">
+                        <div class="service-list-text">{pad(item.order)}</div>
+                        <div class="service-info-top v3">
+                          <div class="service-title-link service">{item.name}</div>
+                          <div class="max-width-20">
+                            <p class="paragraph-regular">{item.shortDescription}</p>
+                          </div>
+                          <a href={`/service/${item.slug}`} class="blog-button service w-inline-block">
+                            <div class="blog-button-item home-hero v3">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">Explore Now</div>
+                                <div class="work-button-text is-two">Explore Now</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="service-info-list">
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[0]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[1]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[2]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[3]?.title}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+              <div class="service-c-list-wrap w-dyn-list">
+                {L1.length > 0 ? (<div role="list" class="service-list service-main w-dyn-items">
+                  {L1.map((item) => (<div role="listitem" class="service-card w-dyn-item">
+                    <div class="service-card-info-wrap v3 service">
+                      <div class="service-info-top service">
+                        <div class="service-list-text">{pad(item.order)}</div>
+                        <div class="service-info-top v3">
+                          <div class="service-title-link service">{item.name}</div>
+                          <div class="max-width-20">
+                            <p class="paragraph-regular">{item.shortDescription}</p>
+                          </div>
+                          <a href={`/service/${item.slug}`} class="blog-button service w-inline-block">
+                            <div class="blog-button-item home-hero v3">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">Explore Now</div>
+                                <div class="work-button-text is-two">Explore Now</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="service-info-list">
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[0]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[1]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[2]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[3]?.title}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href={`/service/${item.slug}`} class="service-card-image-wrap v3 service w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '100vw' : undefined}>
+                      <div class="demo">#</div>
+                    </a>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+              <div class="service-c-list-wrap w-dyn-list">
+                {L2.length > 0 ? (<div role="list" class="service-list service-main w-dyn-items">
+                  {L2.map((item) => (<div role="listitem" class="service-card w-dyn-item">
+                    <a href={`/service/${item.slug}`} class="service-card-image-wrap v3 service w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '100vw' : undefined}>
+                      <div class="demo">#</div>
+                    </a>
+                    <div class="service-card-info-wrap v3 service">
+                      <div class="service-info-top service">
+                        <div class="service-list-text">{pad(item.order)}</div>
+                        <div class="service-info-top v3">
+                          <div class="service-title-link service">{item.name}</div>
+                          <div class="max-width-20">
+                            <p class="paragraph-regular">{item.shortDescription}</p>
+                          </div>
+                          <a href={`/service/${item.slug}`} class="blog-button service w-inline-block">
+                            <div class="blog-button-item home-hero v3">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">Explore Now</div>
+                                <div class="work-button-text is-two">Explore Now</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="service-info-list">
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[0]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[1]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[2]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[3]?.title}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+              <div class="service-c-list-wrap w-dyn-list">
+                {L3.length > 0 ? (<div role="list" class="service-list service-main w-dyn-items">
+                  {L3.map((item) => (<div role="listitem" class="service-card w-dyn-item">
+                    <div class="service-card-info-wrap v3 service">
+                      <div class="service-info-top service">
+                        <div class="service-list-text">{pad(item.order)}</div>
+                        <div class="service-info-top v3">
+                          <div class="service-title-main">{item.name}</div>
+                          <div class="max-width-20">
+                            <p class="paragraph-regular">{item.shortDescription}</p>
+                          </div>
+                          <a href={`/service/${item.slug}`} class="blog-button service w-inline-block">
+                            <div class="blog-button-item home-hero v3">
+                              <div class="button-text-pill">
+                                <div class="work-button-text is-one">Explore Now</div>
+                                <div class="work-button-text is-two">Explore Now</div>
+                              </div>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="button-arrow">
+                                  <path d="M15.8335 12.4997H10.0002H3.3335L3.3335 5.83301V5.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M12.5 16.6663L16.6667 12.4997L12.5 8.33301" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                            <div class="button-line"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="service-info-list">
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[0]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[1]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[2]?.title}</div>
+                        </div>
+                        <div class="service-info-list-item service">
+                          <div class="pill-dot"></div>
+                          <div class="service-list-text">{item.expertise[3]?.title}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href={`/service/${item.slug}`} class="service-card-image-wrap v3 service w-inline-block"><img src={item.image.url} loading="lazy" parallax="" alt={item.image.alt} class="service-image" srcset={item.image.srcset ?? undefined} sizes={item.image.srcset ? '100vw' : undefined}>
+                      <div class="demo">#</div>
+                    </a>
+                  </div>))}
+                </div>
+                ) : (<div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
