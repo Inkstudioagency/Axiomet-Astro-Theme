@@ -57,7 +57,7 @@ The Strapi server has its own `strapi/.env` (secrets, database, `MCP_ENABLED`); 
 │   ├── images/            # theme images, icons, logos and favicons
 │   ├── videos/            # home page background video (mp4 + webm + poster)
 │   ├── fonts/             # BDO Grotesk (headings)
-│   └── js/                # interaction runtime (webflow.js) and jQuery
+│   └── js/                # interaction runtime (site.js) and jQuery
 ├── integrations/          # CMS media in the build (demo images, Strapi downloads)
 ├── src/
 │   ├── components/
@@ -124,7 +124,7 @@ claude mcp add strapi-mcp --transport http http://localhost:1337/mcp -H "Authori
 
 ### Animations
 
-Animations are attached with attributes such as `to-top-0`, `to-top-2`, `title-animation` and `parallax`, and played by the interaction runtime in `public/js/webflow.js` with GSAP, which also runs the sliders, the menu, the FAQ accordions and the background video. Each page passes its `wfPage` id to `BaseLayout`; keep it when you edit a page, because the runtime uses it to find that page's animations. Elements with `data-counter` count up when scrolled into view and Lenis provides smooth scrolling (`src/scripts/animations.ts`). The `/instructions` page summarises this.
+Animations are attached with attributes such as `to-top-0`, `to-top-2`, `title-animation` and `parallax`, and played by the interaction runtime in `public/js/site.js` (global `window.Axiomet`) with GSAP, which also runs the sliders, the menu, the FAQ accordions and the background video. Elements with `data-counter` count up when scrolled into view and Lenis provides smooth scrolling (`src/scripts/animations.ts`). The `/instructions` page summarises this.
 
 ## Deployment
 

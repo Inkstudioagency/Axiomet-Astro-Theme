@@ -14,11 +14,11 @@ interface ImportMeta {
 }
 
 interface Window {
-  /** Webflow runtime queue / API (public/js/webflow.js) */
-  Webflow?: Array<() => void>;
+  /** Interaction runtime queue / API (public/js/site.js) */
+  Axiomet?: Array<() => void>;
 }
 
-// Attribute triggers of the template's scroll interactions (see src/styles/webflow-ix.css)
+// Attribute triggers of the template's scroll interactions (see src/styles/interactions.css)
 declare namespace astroHTML.JSX {
   interface HTMLAttributes {
     parallax?: string;

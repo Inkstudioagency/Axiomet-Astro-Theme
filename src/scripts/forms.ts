@@ -1,10 +1,10 @@
 /**
  * Form handling (contact form and footer newsletter).
  *
- * Out of the box, webflow.js sends forms without an `action` to Webflow's form API,
- * which only works on Webflow hosting. This module runs before webflow.js initialises
- * (module scripts execute before DOMContentLoaded), gives every form an action so
- * webflow.js leaves it alone, and submits it to PUBLIC_FORM_ENDPOINT instead (any
+ * Out of the box, the interaction runtime (public/js/site.js) sends forms without an
+ * `action` to the original template's hosted form API. This module runs before site.js
+ * initialises (module scripts execute before DOMContentLoaded), gives every form an action
+ * so site.js leaves it alone, and submits it to PUBLIC_FORM_ENDPOINT instead (any
  * service that accepts a multipart POST, e.g. Formspree, Basin, Getform or your own API).
  *
  * The success / error states use the template's own `.w-form-done` and `.w-form-fail`

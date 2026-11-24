@@ -16,11 +16,9 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const WF_PAGE = '6b03d34536a37df892a331d4';
 ---
 
 <BaseLayout
-  wfPage={WF_PAGE}
   title={project.seo.metaTitle ?? `${project.name} - ${config.site.title}`}
   description={project.seo.metaDescription ?? project.shortDescription}
   image={project.image.url}

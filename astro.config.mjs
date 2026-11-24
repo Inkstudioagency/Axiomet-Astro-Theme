@@ -8,6 +8,10 @@ export default defineConfig({
   site: config.site.base_url,
   trailingSlash: config.site.trailing_slash ? 'always' : 'ignore',
   integrations: [strapiMedia()],
+  build: {
+    // Emit the bundled CSS as /_astro/*.css files instead of inlining it
+    inlineStylesheets: 'never',
+  },
   fonts: [
     // The template loads Geist and Instrument Serif from Google Fonts; Astro self-hosts them.
     // BDO Grotesk (headings) lives in public/fonts and is declared in src/styles/axiomet.css.
@@ -30,7 +34,7 @@ export default defineConfig({
   ],
   vite: {
     // pre-bundle the animation libraries so the first dev page load registers
-    // GSAP plugins before the interaction runtime (public/js/webflow.js) starts
+    // GSAP plugins before the interaction runtime (public/js/site.js) starts
     optimizeDeps: {
       include: ['gsap', 'gsap/ScrollTrigger', 'gsap/SplitText', 'lenis'],
     },

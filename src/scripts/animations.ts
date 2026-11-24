@@ -1,10 +1,10 @@
 /**
  * Animation runtime.
  *
- * Webflow Interactions (IX3, inside public/js/webflow.js) drive the page animations
- * with GSAP, which they read from `window.gsap` once the DOM is ready. This module
- * runs before DOMContentLoaded, so exposing GSAP here keeps the template's original
- * load order (jQuery -> webflow.js -> GSAP -> plugins) intact.
+ * The interaction runtime (public/js/site.js, global `window.Axiomet`) drives the page
+ * animations with GSAP, which it reads from `window.gsap` once the DOM is ready. This
+ * module runs before DOMContentLoaded, so exposing GSAP here keeps the template's
+ * original load order (jQuery -> site.js -> GSAP -> plugins) intact.
  */
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -29,8 +29,8 @@ requestAnimationFrame(raf);
 
 // Count-up numbers: any element with [data-counter] animates from 0 when scrolled into view.
 // Values without a number (e.g. "Care") are left as they are.
-window.Webflow ||= [];
-window.Webflow.push(() => {
+window.Axiomet ||= [];
+window.Axiomet.push(() => {
   document.querySelectorAll<HTMLElement>('[data-counter]').forEach((counter) => {
     // Animate the first text node (the number), so a trailing <span>+</span> is left alone
     const textNode = [...counter.childNodes].find((n) => n.nodeType === Node.TEXT_NODE && n.textContent?.trim());
